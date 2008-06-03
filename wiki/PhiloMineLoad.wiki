@@ -110,6 +110,17 @@ and the NGRAM:
 }}}
 So, leave_behind appears in 206 documents, 506 times.  May be useful info.
 
+The following is a note ... which is probably done.  MVO needs to check this in the distribution:
+
+  The script mkcountbydoc.pl generates the files countbydocid.lemmas, countbydocid.bilemmas and countbydocid.bigrams.  These files give the total values for each of these features for each document, and PhiloMine uses them when filtering on total feature value per instance.
+
+  You can run this script by simply executing it:
+
+        perl mkcountbydoc.pl
+
+  after you have run philominedocload.pl. It will soon be integrated into philominedocload.pl.
+
+
 = !PhiloMine Division Data Generation =
 
 To run this `./philominedivload.pl -[english/french] -[number] `
