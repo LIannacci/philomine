@@ -1,4 +1,4 @@
-#summary !PhiloMineLoad: Generating Extended Instance and Feature Data
+#summary PhiloMineLoad: Generating Extended Instance and Feature Data
 
 = Introduction =
 
