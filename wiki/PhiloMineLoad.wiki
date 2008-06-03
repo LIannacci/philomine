@@ -2,8 +2,28 @@
 
 = Introduction =
 
-If you have installed the modified !PhiloLogic loader components, the system will create a directory under the database target directory called philomineload.  This directory is where we will generate document and div level data for Philomine2. There are two scripts, philominedocload.pl and philominedivload.pl.  You should be able to run these directly with no problems.
-{{{./philominedocload.pl -english [-french] -1}}}
+If you have installed the modified !PhiloLogic loader components, the system will create a directory under the database target directory called philomineload.  This directory is where we will generate document and div level data for Philomine2. There are two scripts, `philominedocload.pl` and `philominedivload.pl`.  You should be able to run these directly with no problems.
+{{{
+./philominedocload.pl -english [-french] -1
+}}}
+This generates *document* level instance data, sets the language for treetagger and the filter for retaining of bi/tri grams/lemmas as a percentage of documents.  Defaults at 1.
+{{{
+./philominedivload.pl -english [-french] -.01
+}}}
+This generates division level instanace data, sets the language for treetagger and the filter for retaining of bi/tri grams/lemmas as a percentage of documents.  Note the smaller percentage because you have many more instances.  NOTE!! You must comment out the treetagger option you do NOT want and uncomment the one you want before running this.  For an English load:
+{{{
+        if ($dblang eq "-english") {
+             use Alvis::TreeTaggerEnglish;
+             $SPLITONAPOSTROPHE = 0;    # Set on off....
+             }
+        elsif ($dblang eq "-french") {
+             # use Alvis::TreeTaggerFrench;
+            $SPLITONAPOSTROPHE = 1;    # Set on off....
+            }
+}}}
+Yes, this is stupid.  We're looking at a runtime Module load mechanism.  I've tried a bunch of ways, with no love.  Suggestions please.
+
+
 
 
 
