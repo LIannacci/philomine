@@ -1,0 +1,15 @@
+#!PhiloMineLoad: Generating Extended Instance and Feature Data
+
+= Introduction =
+
+If you have installed the modified !PhiloLogic loader components, the system will create a directory under the database target directory called philomineload.  This directory is where we will generate document and div level data for Philomine2. There are two scripts, philominedocload.pl and philominedivload.pl.  You should be able to run these directly with no problems.
+{{{./philominedocload.pl -english [-french] -1}}}
+
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
