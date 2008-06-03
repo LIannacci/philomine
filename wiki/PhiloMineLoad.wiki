@@ -176,3 +176,7 @@ abode_peace 4
 abode_poor 2
 abode_power 2
 }}}
+
+----
+
+Scribbling here....
