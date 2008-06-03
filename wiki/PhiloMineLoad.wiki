@@ -10,7 +10,7 @@ This generates *document* level instance data, sets the language for treetagger 
 {{{
 ./philominedivload.pl -english [-french] -.01
 }}}
-This generates division level instanace data, sets the language for treetagger and the filter for retaining of bi/tri grams/lemmas as a percentage of documents.  Note the smaller percentage because you have many more instances.  NOTE!! You must comment out the treetagger option you do NOT want and uncomment the one you want before running this.  For an English load:
+This generates *division* level instanace data, sets the language for treetagger and the filter for retaining of bi/tri grams/lemmas as a percentage of documents.  Note the smaller percentage because you have many more instances.  NOTE!! You must comment out the treetagger option you do NOT want and uncomment the one you want before running this.  For an English load:
 {{{
         if ($dblang eq "-english") {
              use Alvis::TreeTaggerEnglish;
