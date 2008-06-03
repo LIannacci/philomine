@@ -23,11 +23,54 @@ This generates *division* level instanace data, sets the language for treetagger
 }}}
 Yes, this is stupid.  We're looking at a runtime Module load mechanism.  I've tried a bunch of ways, with no love.  Suggestions please.
 
+====
+
+
+
+= PhiloLogic Modifications =
+
+The distribution contains a modified version `xml-sgmlloader.plin` (our standard TEI XML/SGML text loader) to generate data that are required for div and subdivlevel !PhiloMine loading.  It now checks for a new configuration setting in `textload.cfg`:
+{{{
+# ------------------------- Dump Philomine Chunks -------------------
+# Generate the files for Philomine object chunks.  This will take as 
+# much space as the raw text files.  Writes a chunkified version of the
+# text file to frequencies/wordfreqdoc/  PHILODOCID.rawchunks  This data
+# is read later by philomindivload.pl to generate frequency lists of
+# lemmas, bigrams, and bilemmas.  Normally off.
+$DUMPPHILOMINECHUNKS = 1;
+}}}
+
+If it sees this, it will dump raw text files as indicated.  These are simply the 
+words associated with each !PhiloID object.  Eg:
+
+{{{
+DIV     200:1:1:5
+    THE EARLY DEAD.    
+SUBDIV  200:1:1:5:1   Why mourn for the Young? Better that the light cloud 
+                      should fade away in the morning's breath, than travel 
+                      through the weary day, to gather in darkness, and end in 
+                      storm.          Bulwer.  
+}}}
+
+All the words in each SUBDIV should be on one line.  To accumlate DIVS, simple read all the words until the next DIV.  It is our approach to index all DIV breaks (thus for the Encyclopédie we would read a main article to the first subarticle.  
+
+We should be able to use this for SUBDIV (paragraph, etc) loading in future.
+
+The reason for this step is to make sure that our object vectors correspond exactly
+to the PhiloLogic object identifiers.  Russ and I decided that synchronizing these
+independently of the load process would be more of a hassle and prone to error (given
+the stunts we do on loading).  In case of errors, it should ALSO be limited to a single
+object, since I grab the philoids when they are generated.  
+
+Also note that I modified loader.xmake to copy the contents of `installdir/philomineload` to your database directory.
 
 
 
 
-= Details =
+
+
+
+
 
 Add your content here.  Format your content with:
   * Text in *bold* or _italic_
