@@ -65,7 +65,7 @@ object, since I grab the philoids when they are generated.
 Also note that I modified loader.xmake to copy the contents of `installdir/philomineload` to your database directory.
 
 
-= NGRAM/LEMMA CALCULATION =
+= N-gram/Lemma Generation =
 
 Both loader scripts generate NGRAMS/LEMMAS by reading words in and eliminating the 
 words found in the automatically generated `LOADDIR/lib/cluster.filter.wrds`.
@@ -75,7 +75,7 @@ each, specify a different filter word file if you want.  There may be other
 problems that pop-up, but so far it looks OK.
 
 
-= PHILOMINE DOCUMENT LEVEL OBJECTS =
+= !PhiloMine Document Level Data =
 
 This is currently set to generate lemmas, bigrams,
 bilemmas, trigrams, and trilemmas.  
@@ -110,11 +110,69 @@ and the NGRAM:
 }}}
 So, leave_behind appears in 206 documents, 506 times.  May be useful info.
 
+= !PhiloMine Division Data Generation =
 
+To run this `./philominedivload.pl -[english/french] -[number] `
 
+IMPORTANT NOTE: remember to comment out Treetagger in this one.  
 
+-[number], should be very small, say 0.01 again as a percentage, since we will be selecting from many thousands of objects.  In 500 works of English poetry, we get 42506 objects.  For 500 modern French, we get 9,161 objects.  So, you want to eliminate NGRAMS from some objects, but not 1% (425).  
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Also, I have commented out trigrams/lemmas at this time.  These get VERY sparse and
+caused some loading problems (for the English).  I can hack something together if we
+want to try it.  
+
+All of the output goes to alldivobjects/  
+
+{{{
+bigrams.count.byobject          bilemmas.freqbyobject.dat       lemmas.freqbyobject.idx
+bigrams.freqbyobject.dat        bilemmas.freqbyobject.idx       words.count.byobject
+bigrams.freqbyobject.idx        bilemmas.totalinobjects         words.freqbyobject.dat
+bigrams.totalinobjects          lemmas.count.byobject           words.freqbyobject.idx
+bilemmas.count.byobject         lemmas.freqbyobject.dat
+}}}
+
+Thus, words, lemmas, bigrams, and bilemmas are stored in a pair of files, `[TYPE].freqbyobject.dat` and `[TYPE].freqbyobject.idx`.  The "dat" files contain entries for all of the objects, keyed
+by objectid:
+
+{{{
+1:1:0   book_any 1|children_book 1|dead_go 1|dear_children 1|mind_make 1|mother_mind 1
+
+OBJID [TAB] STRING INT|STING INT [NEWLINE]
+}}}
+
+This gives the count of each word, lemma, NGRAM in the object.  
+
+The "idx" file is three, space separated, fields showing objectid byte-offset span.
+Thus, the entry for the example above (1:1:0) is
+{{{
+1:1:0 26776 85
+}}}
+which shows where to start reading in "dat" file and how far.  So, you read the idx file into a HASH keyed on philo objectid.  Then, each time you need an object, you get the byte offset and span and
+{{{
+               ($offset, $span) = split("\t", $x);
+                $wobjfile = $SYSTEM_DIR . "[SOMEFILE].dat";
+                open(OBJWORDS, "$wobjfile");
+                seek (OBJWORDS,$offset,0);
+                read (OBJWORDS,$wordsinobject,$span);
+}}}
+and proceed.  
+
+This reason for all of this is to save file creation (do we want 40,000+ files?).  And it
+is very fast ... particularly when reading in lots of little chunks.  
+
+[TYPE].count.byobject shows the number of items in each object
+{{{
+0:1:1 825
+0:1:2 156
+0:1:3 22
+}}}
+
+[TYPE].totalsinobjects shows raw frequency byobject (before filtering as I recall):
+
+{{{
+abode_pass 2
+abode_peace 4
+abode_poor 2
+abode_power 2
+}}}
