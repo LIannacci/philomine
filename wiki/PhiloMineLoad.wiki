@@ -27,7 +27,7 @@ Yes, this is stupid.  We're looking at a runtime Module load mechanism.  I've tr
 
 
 
-= PhiloLogic Modifications =
+= !PhiloLogic Modifications =
 
 The distribution contains a modified version `xml-sgmlloader.plin` (our standard TEI XML/SGML text loader) to generate data that are required for div and subdivlevel !PhiloMine loading.  It now checks for a new configuration setting in `textload.cfg`:
 {{{
@@ -65,8 +65,50 @@ object, since I grab the philoids when they are generated.
 Also note that I modified loader.xmake to copy the contents of `installdir/philomineload` to your database directory.
 
 
+= NGRAM/LEMMA CALCULATION =
+
+Both loader scripts generate NGRAMS/LEMMAS by reading words in and eliminating the 
+words found in the automatically generated `LOADDIR/lib/cluster.filter.wrds`.
+You may want to look at this file, to make sure that you are not eliminating
+any content words, since this just takes (roughly) the top 120.  You can, in 
+each, specify a different filter word file if you want.  There may be other 
+problems that pop-up, but so far it looks OK.
 
 
+= PHILOMINE DOCUMENT LEVEL OBJECTS =
+
+This is currently set to generate lemmas, bigrams,
+bilemmas, trigrams, and trilemmas.  
+
+To run this `./philominedocload.pl -[english/french] -[number]`
+
+We can add more languages at one point.  -[number] is a low end filter for bi/tri-grams/lemmas expressed as the percentage of instances.  Thus -1 is 1% of the documents, so in a load of 500, an NGRAM must appear in more than 4 documents.  This reads the raw input text from `../TEXTS/`. This is a holdover, maybe I should read the texts as generated with object ids, but hey, it works.  :-)
+
+This creates directories in `philomineload lemmas/ bigrams/ bilemmas/ trigrams/` and `trilemmas/`.   In each of these are files `PHILODOCID.rawfreq` which are made up of a string, frequency and docid:
+{{{
+child_child 1 380
+child_field 1 380
+child_free 1 380
+child_make 2 380
+city_dream 1 380
+city_hate 1 380
+}}}
+This is the same format as out standard word frequencies, found in `DBDIR/frequencies/`.  
+
+Also, in tmp/ you will find files corresponding to raw input to !TreeTagger and
+!TreeTagger raw out put, by philodocid.  TEMPTEXT.63 is the raw input to TT and
+TREETAGOUT.63 is the output for !PhiloDocid 63.  This is a handy way to see what
+works and does not work.  We will also use the raw output to try to build a 
+virtual lemmatized word search for !PhiloLogic (pending, I may add this to the
+installation).  Finally, you will see `bigrams.sorted`, `bilemmas.sorted`, 
+`trigrams.sorted`, `trilemmas.sorted` which are sorted by number of documents, frequency
+and the NGRAM:
+{{{
+206 506 leave_behind
+194 955 thine_eye
+194 640 hear_voice
+}}}
+So, leave_behind appears in 206 documents, 506 times.  May be useful info.
 
 
 
