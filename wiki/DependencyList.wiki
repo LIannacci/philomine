@@ -4,6 +4,7 @@
 and faster machine the better.  We have had success using a Mac
 G5 Quad with 2GB memory and a Mac G5 Oct? with 12 GB memory.  
 
+We are very dependent, in a very good sense, on many fine open source packages.  Here is the list of (mainly) required packages: 
   * [http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those good lads at ARTFL)
   * !PhiloLogic loader modifications (in this distribution0
   * [http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
@@ -21,6 +22,6 @@ G5 Quad with 2GB memory and a Mac G5 Oct? with 12 GB memory.
   * [http://glaros.dtc.umn.edu/gkhome/views/cluto CLUTO]
 
 
-Let us know if we missed somethinng.
+Let us know if we missed something.
 
-Not all dependencies are required for all classifiers. If you don't want to use SVMLight or Weka functions, for example, they needn't be installed and the other PhiloMine functions will be accessible if they are installed.
+Not all dependencies are required for all classifiers. If you don't want to use SVMLight or Weka functions, for example, they needn't be installed and the other !PhiloMine functions will be accessible if they are installed.
