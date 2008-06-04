@@ -5,6 +5,7 @@ and faster machine the better.  We have had success using a Mac
 G5 Quad with 2GB memory and a Mac G5 Oct? with 12 GB memory.  
 
   * [http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those good lads at ARTFL)
+  * !PhiloLogic loader modifications (in this distribution0
   * [http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
   * [http://www.cs.waikato.ac.nz/~ml/weka/ Weka3] (run from command line)
   * [http://svmlight.joachims.org/ SVMLight] (run from command line)
@@ -15,8 +16,8 @@ G5 Quad with 2GB memory and a Mac G5 Oct? with 12 GB memory.
   * [http://search.cpan.org/~lbrocard/GraphViz-2.02/lib/GraphViz.pm GraphViz]
   * [http://search.cpan.org/~csoe/PDL-2.4.3/Basic/PDL.pm PDL]
   * [http://search.cpan.org/~sdp/Lingua-Stem-Fr-0.02/lib/Lingua/Stem/Fr.pm Lingua::Stem::Fr]
-  * [http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/ TreeTagger] and French English parameter files
-  * [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::Treetagger]
+  * [http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/ TreeTagger] and French English parameter files (for philomineload)
+  * [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::Treetagger] (for philomineload)
   * [http://glaros.dtc.umn.edu/gkhome/views/cluto CLUTO]
 
 
