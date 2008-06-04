@@ -7,12 +7,12 @@ PhiloMine should run on any OS-X or Linux machine.  The more memory
 and faster machine the better.  We have had success using a Mac
 G5 Quad with 2GB memory.  
 
-[http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those 
+  *[http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those 
 good lads at ARTFL)
-[http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
-[http://www.cs.waikato.ac.nz/~ml/weka/ Weka3] (run from command line)
-[http://svmlight.joachims.org/ SVMLight] (run from command line)
-[http://www.cpan.org/ perlmods] 
+  *[http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
+  *[http://www.cs.waikato.ac.nz/~ml/weka/ Weka3] (run from command line)
+  *[http://svmlight.joachims.org/ SVMLight] (run from command line)
+  *[http://www.cpan.org/ perlmods] 
 [http://search.cpan.org/dist/Algorithm-NaiveBayes/ Algorithm::NaiveBayes]
 [http://search.cpan.org/dist/AI-DecisionTree/ AI::DecisionTree]
 [http://search.cpan.org/~ingy/YAML-0.62/lib/YAML.pm YAML]
