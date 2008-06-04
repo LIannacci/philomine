@@ -1,8 +1,34 @@
-#summary Dependency List
+#summary PhiloMine2 Dependency List
 
 = Introduction =
 
-Add your content here.
+
+PhiloMine should run on any OS-X or Linux machine.  The more memory
+and faster machine the better.  We have had success using a Mac
+G5 Quad with 2GB memory.  
+
+[http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those 
+good lads at ARTFL)
+[www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
+[www.cs.waikato.ac.nz/~ml/weka/ Weka3] (run from command line)
+[svmlight.joachims.org/ SVMLight] (run from command line)
+[www.cpan.org/ perlmods] 
+	<ul>
+		<li><a href="http://search.cpan.org/dist/Algorithm-NaiveBayes/">Algorithm::NaiveBayes</a>
+		<li><a href=http://search.cpan.org/dist/AI-DecisionTree/">AI::DecisionTree</a>
+
+		<li><a href="http://search.cpan.org/~ingy/YAML-0.62/lib/YAML.pm">YAML</a>
+		<li><a href="http://search.cpan.org/~lbrocard/GraphViz-2.02/lib/GraphViz.pm">GraphViz</a>
+		<li><a href="http://search.cpan.org/~csoe/PDL-2.4.3/Basic/PDL.pm">PDL</a>
+		<li><a href="http://search.cpan.org/~sdp/Lingua-Stem-Fr-0.02/lib/Lingua/Stem/Fr.pm">Lingua::Stem::Fr</a>
+	</ul>
+
+
+<li> let us know if we missed somethinng.
+
+<li> Not all dependencies are required for all classifiers. If you don't want to use SVMLight or Weka functions, for example, they needn't be installed and the other PhiloMine functions will be accessible if they are installed.
+</ul>
+</p>
 
 
 = Details =
