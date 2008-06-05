@@ -6,7 +6,7 @@ G5 Quad with 2GB memory and a Mac G5 Oct? with 12 GB memory.
 
 We are very dependent, in a very good sense, on many fine open source packages.  Here is the list of (mainly) required packages: 
   * [http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those good lads at ARTFL)
-  * !PhiloLogic loader modifications (in this distribution0
+  * !PhiloLogic loader modifications (in this distribution)
   * [http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
   * [http://www.cs.waikato.ac.nz/~ml/weka/ Weka3] (run from command line)
   * [http://svmlight.joachims.org/ SVMLight] (run from command line)
