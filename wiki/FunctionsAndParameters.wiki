@@ -1,5 +1,14 @@
 #summary PhiloMine2: Functions and Parameters
 
+This is taken from PhiloMine1.  Need to be updated.  For KNN classification we need to discuss
+
+Counts 
+Weighted Counts (inverse rank of nearness)
+Dot Product (sum of matching vectors)  
+DP Squared     
+DP Cubed
+
+
 As noted in the Introduction, we currently have two flavors of PhiloMine, the main version is primarily for comparisons of two sets of documents in a PhiloLogic database. Called PhiloMine, this can be used with any existing PhiloLogic database installation. The second variant is named Encyclomine. This performs classification, prediction, and vector space searching on "chunks" within one or more documents and cannot be simply dropped into an existing PhiloLogic database. We are planning to merge these two flavors in a later release in conjunction with an update release of PhiloLogic.
 
 We have tested all PhiloMine functions on a number of large full-text databases, including 2,500 (150 million words) Frantext database and numerous smaller datasets. Encyclomine is currently being used for the Encyclopedie of Diderot and d'Alembert, a large collection of 19th century newspapers, and an experimental version of Frantext (built as div level chunks with additional metadata). Please consult our Demonstration and Samples for a discussion of sample results and applications.
