@@ -2,7 +2,7 @@
 
 !PhiloMine should run on any OS-X or Linux machine.  The more memory
 and faster machine the better.  We have had success using a Mac
-G5 Quad with 2GB memory and a Mac G5 Oct? with 12 GB memory.  
+G5 Quad Core with 2GB memory and a Mac G5 Dual Quad Core with 12 GB memory.  
 
 We are very dependent, in a very good sense, on many fine open source packages.  Here is the list of (mainly) required packages: 
   * [http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those good lads at ARTFL)
