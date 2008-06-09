@@ -1,7 +1,8 @@
 #summary ARTFL PhiloMine papers, talks and other useful references
 
 
-Link to CiteULike.
+We keep many of our bibliographic references on 
+[http://www.citeulike.org/group/ARTFL/library CiteULike].  
 
 
 = ARTFL Papers and Talks =
