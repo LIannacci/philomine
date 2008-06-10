@@ -1,0 +1,10 @@
+#summary Hints and Tips for Using PhiloMine
+
+= Introduction =
+
+Add your content here.
+
+
+= !PhiloLogic Contextualizations =
+
+Note that for lemma and bi-lemma contextualizations, you will not get all occurrences because we have implemented lemma level searching in most databases.  !PhiloLogic is known to handle lemma searching if the data is available.  See the !PhiloLogic release site for further details.  
