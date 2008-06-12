@@ -32,5 +32,4 @@ Shlomo Argamon, Russell Horton, Mark Olsen and Sterling Stein, "Gender, Race, an
 Shlomo Argamon, Jean-Baptiste Goulain, Mark Olsen and Russell Horton, "Discourse, power and _écriture féminine_: Text mining gender difference in 18th and 19th century French literature", Digital Humanities 2007, University of Illinois, June 2007.
 
 Russell Horton, Robert Morrissey, Mark Olsen, Glenn Roe and Robert Voyer, "Mining Eighteenth Century Ontologies: Machine Learning and Knowledge Classification in the Encyclopédie", Digital Humanities 2007, University of Illinois, June 2007
-([http://docs.google.com/Presentation?id=dfddkspw_65dcrfj2 gpf).
-
+([http://docs.google.com/Presentation?id=dfddkspw_65dcrfj2 gpf]).
