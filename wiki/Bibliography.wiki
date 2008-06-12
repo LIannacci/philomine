@@ -29,7 +29,8 @@ Mark Olsen, "From Words to Works: Machine Learning and Text Mining at ARTFL", Te
 Shlomo Argamon, Russell Horton, Mark Olsen and Sterling Stein, "Gender, Race, and Nationality in Black Drama, 1850-2000: Mining Differences in Language Use in Authors and their Characters", Digital Humanities 2007, University of Illinois, June 2007
 ([http://barkov.uchicago.edu/public/talks/dh2007/bldr/ html slides])
 
-Shlomo Argamon, Jean-Baptiste Goulain, Mark Olsen and Russell Horton, "Discourse, power and _écriture féminine_: Text mining gender difference in 18th and 19th century French literature", Digital Humanities 2007, University of Illinois, June 2007.
+Shlomo Argamon, Jean-Baptiste Goulain, Mark Olsen and Russell Horton, "Discourse, power and _écriture féminine_: Text mining gender difference in 18th and 19th century French literature", Digital Humanities 2007, University of Illinois, June 2007
+([http://barkov.uchicago.edu/public/talks/dh2007/fww/ html slides]).
 
 Russell Horton, Robert Morrissey, Mark Olsen, Glenn Roe and Robert Voyer, "Mining Eighteenth Century Ontologies: Machine Learning and Knowledge Classification in the Encyclopédie", Digital Humanities 2007, University of Illinois, June 2007
 ([http://docs.google.com/Presentation?id=dfddkspw_65dcrfj2 gpf]).
