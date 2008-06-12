@@ -24,7 +24,7 @@ Shlomo Argamon, Jean-Baptiste Goulain, Russell Horton and Mark Olsen, "Vive la D
 Russell Horton, Robert Morrissey, Mark Olsen, Glenn Roe, and Robert Voyer, "Mining Eighteenth Century Ontologies: Machine Learning and Knowledge Classification in the Encyclopédie", _Digital Humanities Quarterly_ (forthcoming 2008).
 
 Mark Olsen, "From Words to Works: Machine Learning and Text Mining at ARTFL", Technological Innovation and Cooperation for Foreign Information Access (TICFIA), Chicago, May 1, 2008 
-[http://docs.google.com/Presentation?id=ddj2s2rb_46d8zzbfff gpf]
+([http://docs.google.com/Presentation?id=ddj2s2rb_46d8zzbfff gpf])
 
 Shlomo Argamon, Russell Horton, Mark Olsen and Sterling Stein, "Gender, Race, and Nationality in Black Drama, 1850-2000: Mining Differences in Language Use in Authors and their Characters", Digital Humanities 2007, University of Illinois, June 2007
 ([http://barkov.uchicago.edu/public/talks/dh2007/bldr/ html slides])
