@@ -9,7 +9,7 @@ We keep many of our bibliographic references on
 
 Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Deconstructing Machine Learning: A Challenge for Digital Humanities", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
 
-Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "PhiloMine: An Integrated Environment for Humanities Text Mining", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
+Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "!PhiloMine: An Integrated Environment for Humanities Text Mining", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
 
 Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Hidden Roads and Twisted Paths: Intertextual Discovery using Clusters, Classifications, and Similarities", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
 
@@ -25,3 +25,12 @@ Russell Horton, Robert Morrissey, Mark Olsen, Glenn Roe, and Robert Voyer, "Mini
 
 Mark Olsen, "From Words to Works: Machine Learning and Text Mining at ARTFL", Technological Innovation and Cooperation for Foreign Information Access (TICFIA), Chicago, May 1, 2008 
 [http://docs.google.com/Presentation?id=ddj2s2rb_46d8zzbfff gpf]
+
+Shlomo Argamon, Russell Horton, Mark Olsen and Sterling Stein, "Gender, Race, and Nationality in Black Drama, 1850-2000: Mining Differences in Language Use in Authors and their Characters", Digital Humanities 2007, University of Illinois, June 2007
+([http://barkov.uchicago.edu/public/talks/dh2007/bldr/ html slides])
+
+Shlomo Argamon, Jean-Baptiste Goulain, Mark Olsen and Russell Horton, "Discourse, power and _écriture féminine_: Text mining gender difference in 18th and 19th century French literature", Digital Humanities 2007, University of Illinois, June 2007.
+
+Russell Horton, Robert Morrissey, Mark Olsen, Glenn Roe and Robert Voyer, "Mining Eighteenth Century Ontologies: Machine Learning and Knowledge Classification in the Encyclopédie", Digital Humanities 2007, University of Illinois, June 2007
+([http://docs.google.com/Presentation?id=dfddkspw_65dcrfj2 gpf).
+
