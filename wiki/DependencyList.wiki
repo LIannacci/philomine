@@ -11,7 +11,9 @@ Required for all functions:
   * !PhiloLogic loader modifications (in this distribution)
   * [http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
   * [http://search.cpan.org/~ingy/YAML-0.62/lib/YAML.pm YAML]
-  * Perl Modules including: CGI; URI::Escape; POSIX; IO::Tee;
+  * Perl Modules including:
+**CGI; URI::Escape; POSIX; (probably already available to you)
+**IO::Tee; http://search.cpan.org/~kenshan/IO-Tee-0.64/Tee.pm
 
 Required to generate lemmas:
   * [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::Treetagger] (for philomineload) - A special hacked version is needed for each language you wish to use. A French and English version is provided in the perl_mods directory of the installation tarball. Install Alvis::Treetagger and copy these into the install directory. 
