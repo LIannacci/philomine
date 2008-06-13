@@ -20,6 +20,7 @@ We are very dependent, in a very good sense, on many fine open source packages. 
   * [http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/ TreeTagger] and French English parameter files (for philomineload)
   * [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::Treetagger] (for philomineload)
   * [http://glaros.dtc.umn.edu/gkhome/views/cluto CLUTO]
+  * Perl Modules including: CGI; URI::Escape; POSIX; IO::Tee;
 
 
 Let us know if we missed something.
