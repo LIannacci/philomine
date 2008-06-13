@@ -12,8 +12,8 @@ Please take the most recent distribution found on [http://code.google.com/p/phil
 {{{
 
 ls -R
-cgi-bin			lib			philomineload
-etc			new_philologic_parts	www
+cgi-bin			lib			perl_mods		www
+etc			new_philologic_parts	philomineload
 
 ./cgi-bin:
 cluto_functions.pl		perlbayes_functions.pl		vectorspace_functions.pl
@@ -38,14 +38,26 @@ MULTIBAYES.pl
 philomineenc.cfg
 
 ./lib:
-philominesubs.pl	philominesubs.pl~
+philominesubs.pl
 
 ./new_philologic_parts:
-loader.xmake		textload.cfg		xml-sgmlloader.plin
+loader.xmake		search3			textload.cfg		xml-sgmlloader.plin
+
+./perl_mods:
+TreetaggerEnglish.pm	TreetaggerFrench.pm
 
 ./philomineload:
 README			divaccumhelper.pl	mkcountbydoc.pl		philominedivload.pl
 accumulate.pl		lowfreqfilter.pl	mkcountbyobj.pl		philominedocload.pl
+
+./www:
+philomine.css		philomine_footer.html	philomine_header.html	scripts
+
+./www/scripts:
+jquery.js		philomine_functions.js
+
+
+
 
 }}}
 
@@ -64,10 +76,9 @@ We are assuming that your !PhiloLogic system installation is in the standard loc
   * copy `philomine.cfg` from `etc/` of the distribution to `/etc/philologic/` 
   * copy the files in `perl_mods/` of the distribution to where you normally have perl modules installed.  
   * copy `search3t` from `new_philologic_parts/` to your `cgi-bin/philologic/` directory.  Note that this replaces the main !PhiloLogic search routine, so you may want to back that up too.
-  * copy the contents of `www/` in the distribution to the document root of your Web Server (or elsewhere and configure as required).
+  * copy the entire contents of `www/` in the distribution to the document root of your Web Server (or elsewhere and configure as required).  Note that this is a subdirectory here as well.
 
 
  = Configuring Your Installation =
 
 Presuming that this all worked, edit `/etc/philologic/philomine.cfg` to suit your local installation.  If you are not using `/etc/philologic/philomine.cfg` you can edit `cgi-bin/philomine2/config.pl` as required.  
-
