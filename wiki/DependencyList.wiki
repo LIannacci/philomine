@@ -4,23 +4,30 @@
 and faster machine the better.  We have had success using a Mac
 G5 Quad Core with 2GB memory and a Mac G5 Dual Quad Core with 12 GB memory.  
 
-We are very dependent, in a very good sense, on many fine open source packages.  Here is the list of (mainly) required packages: 
+We are very dependent, in a very good sense, on many fine open source packages.  Here is the list of (mainly) required packages (not all are required for all functions):
+
+Required for all functions: 
   * [http://philologic.uchicago.edu/download.php PhiloLogic3] (available from those good lads at ARTFL)
   * !PhiloLogic loader modifications (in this distribution)
   * [http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
+  * [http://search.cpan.org/~ingy/YAML-0.62/lib/YAML.pm YAML]
+  * Perl Modules including: CGI; URI::Escape; POSIX; IO::Tee;
+
+Required to generate lemmas:
+  * [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::Treetagger] (for philomineload) - A special hacked version is needed for each language you wish to use. A French and English version is provided in the perl_mods directory of the installation tarball. Install Alvis::Treetagger and copy these into the install directory. 
+  * [http://search.cpan.org/~sdp/Lingua-Stem-Fr-0.02/lib/Lingua/Stem/Fr.pm Lingua::Stem::Fr]
+  * [http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/ TreeTagger] and French English parameter files (for philomineload)
+
+
+Required for specific mining functions:
   * [http://www.cs.waikato.ac.nz/~ml/weka/ Weka3] (run from command line)
   * [http://svmlight.joachims.org/ SVMLight] (run from command line)
   * [http://www.cpan.org/ perlmods] 
   * [http://search.cpan.org/dist/Algorithm-NaiveBayes/ Algorithm::NaiveBayes]
   * [http://search.cpan.org/dist/AI-DecisionTree/ AI::DecisionTree]
-  * [http://search.cpan.org/~ingy/YAML-0.62/lib/YAML.pm YAML]
   * [http://search.cpan.org/~lbrocard/GraphViz-2.02/lib/GraphViz.pm GraphViz]
-  * [http://search.cpan.org/~csoe/PDL-2.4.3/Basic/PDL.pm PDL]
-  * [http://search.cpan.org/~sdp/Lingua-Stem-Fr-0.02/lib/Lingua/Stem/Fr.pm Lingua::Stem::Fr]
-  * [http://www.ims.uni-stuttgart.de/projekte/corplex/TreeTagger/ TreeTagger] and French English parameter files (for philomineload)
-  * [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::Treetagger] (for philomineload) - A special hacked version is needed for each language you wish to use. A French and English version is provided in the perl_mods directory of the installation tarball. Install Alvis::Treetagger and copy these into the install directory. 
   * [http://glaros.dtc.umn.edu/gkhome/views/cluto CLUTO]
-  * Perl Modules including: CGI; URI::Escape; POSIX; IO::Tee;
+
 
 
 Let us know if we missed something.
