@@ -11,7 +11,8 @@ Required for all functions:
   * !PhiloLogic loader modifications (in this distribution)
   * [http://www.google.com/search?client=safari&rls=en&q=mysql&ie=UTF-8&oe=UTF-8 MySQL]
   * [http://search.cpan.org/~ingy/YAML-0.62/lib/YAML.pm YAML]
-  * Perl Modules including:
+
+Required Perl Modules:
   **CGI; URI::Escape; POSIX; (probably already available to you)
   **IO::Tee; http://search.cpan.org/~kenshan/IO-Tee-0.64/Tee.pm
 
