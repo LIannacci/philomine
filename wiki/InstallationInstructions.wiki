@@ -49,4 +49,13 @@ accumulate.pl		lowfreqfilter.pl	mkcountbyobj.pl		philominedocload.pl
 
 }}}
 
-These files must be copied into the correct locations.  Please note that we that perl is found in /usr/bin/perl  Sadly, if you have your perl someplace else, you may have to modify a number of files.  
+These files must be copied into the correct locations.  Please note that we that perl is found in /usr/bin/perl  Sadly, if you have your perl someplace else, you may have to modify a number of files. 
+
+ = Installing: Step-by-step =
+
+We are assuming that your !PhiloLogic system installation is in the standard location, `/var/lib/philologic/`.  If this is not the case, please make the appropriate adjustments in your installation process.
+
+
+  * make a directory in your `cgi-bin/` folder named `philomine2` and copy the entire contents of the distribution `cgi-bin/` directory to this location.  Check permissions and make sure to get all of the subdirectories.  
+  * copy the directory `philomineload` in this distribution to `/var/lib/philologic/installdir/`.  Again, check your permissions.
+  * copy `loader.xmake` and `textload.cfg` found in`new_philologic_parts/` to `/var/lib/philologic/` 
