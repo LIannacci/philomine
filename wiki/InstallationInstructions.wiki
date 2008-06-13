@@ -2,7 +2,7 @@
 
 = Introduction =
 
-We have not automated the !PhiloMine installation process at this time.  The following will outline the steps for PhiloMine installation.  Note that we assume you have !PhiloLogic and the other packages listed in our DependencyList.  Again, not all of the packages in the list are required, but many are.  We will be updating the distribution on a regular basis, to fix the inevitable bugs and problems, so we advise that you not make significant modifications to the perl code at this time.
+We have not automated the !PhiloMine installation process at this time.  The following will outline the steps for !PhiloMine installation.  Note that we assume you have !PhiloLogic and the other packages listed in our DependencyList.  Again, not all of the packages in the list are required, but many are.  We will be updating the distribution on a regular basis, to fix the inevitable bugs and problems, so we advise that you not make significant modifications to the perl code at this time.
 
 
 = !PhiloMine2 distribution =
@@ -48,3 +48,5 @@ README			divaccumhelper.pl	mkcountbydoc.pl		philominedivload.pl
 accumulate.pl		lowfreqfilter.pl	mkcountbyobj.pl		philominedocload.pl
 
 }}}
+
+These files must be copied into the correct locations.  Please note that we that perl is found in /usr/bin/perl  Sadly, if you have your perl someplace else, you may have to modify a number of files.  
