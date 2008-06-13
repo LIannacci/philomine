@@ -7,4 +7,44 @@ We have not automated the !PhiloMine installation process at this time.  The fol
 
 = !PhiloMine2 distribution =
 
-Please take the most recent distribution found on 
+Please take the most recent distribution found on [http://code.google.com/p/philomine/downloads/list Download] tab and extract the files.  The distribution should contain the following parts, which you will find in half-a-dozen folders in the philomine2/ directory:
+
+{{{
+
+ls -R
+cgi-bin			lib			philomineload
+etc			new_philologic_parts	www
+
+./cgi-bin:
+cluto_functions.pl		perlbayes_functions.pl		vectorspace_functions.pl
+config.pl			perldecisiontree_functions.pl	weka_functions.pl
+description_functions.pl	perlrelativerate_functions.pl	wekabayes_functions.pl
+feature_filter_functions.pl	philomine.classification.pl	wekaig_functions.pl
+feature_functions.pl		philomine.formtemplate.html	wekaj48_functions.pl
+form.pl				philomine2			wekamlp_functions.pl
+form_components			svmlight_functions.pl		wekasmo_functions.pl
+instance_functions.pl		utility_functions.pl		writedata_functions.pl
+
+./cgi-bin/form_components:
+algorithm_options	form.html		function_data.pl
+corpus			form_functions.pl	get_part.pl
+
+./cgi-bin/form_components/algorithm_options:
+MULTIBAYES.pl
+
+./cgi-bin/form_components/corpus:
+
+./etc:
+philomineenc.cfg
+
+./lib:
+philominesubs.pl	philominesubs.pl~
+
+./new_philologic_parts:
+loader.xmake		textload.cfg		xml-sgmlloader.plin
+
+./philomineload:
+README			divaccumhelper.pl	mkcountbydoc.pl		philominedivload.pl
+accumulate.pl		lowfreqfilter.pl	mkcountbyobj.pl		philominedocload.pl
+
+}}}
