@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Add your content here.
+We have not automated the !PhiloMine installation process at this time.  The following will outline the steps for PhiloMine installation.  Note that we assume you have !PhiloLogic and the other packages listed in our DependencyList.  
 
 
 = Details =
