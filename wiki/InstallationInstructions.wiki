@@ -96,7 +96,20 @@ If that works, you are now ready to load !PhiloMine data.  !PhiloLogic will have
 
 `./philominedocload.pl -english`
 
-in database specific `philomineload`.  Please consult detailed notes on running the two types of !PhiloMine loaders (one for document level data and one for "div level data) in our page PhiloMineLoad
+in database specific `philomineload`.  Please consult detailed notes on running the two types of !PhiloMine loaders (one for document level data and one for "div level data) in our page PhiloMineLoad.  
+
+If you are very lucky, everything worked.  To test this out, you want to access the !PhiloMine dynamic search for which will be in
+
+`http://YOUR.MACHINE.NAME/cgi-bin/philomine2/philomine.classification.pl`
+
+You should get a form that looks rather much like 3rd slide in our 
+[http://docs.google.com/Present?id=ddj2s2rb_74hcggqbhm&skipauth=true PhiloMine Tour].
+If you have gotten this far, then you should be able to follow the tour and perform document level tasks.
+
+Please feel free to contact us if/when you run into problems.  We will make every effort to help you out.
+
+
+
 
 
 
