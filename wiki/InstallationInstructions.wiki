@@ -74,7 +74,7 @@ We are assuming that your !PhiloLogic system installation is in the standard loc
   * copy `xml-sgmlloader.plin` from `new_philologic_parts/` to `/var/lib/philologic/utils` (again, this replaces an existing file).
   * copy `philominesubs.pl` from the `lib` directory of this distribution to `/var/lib/philologic/installdir/lib/` 
   * copy `philomine.cfg` from `etc/` of the distribution to `/etc/philologic/` 
-  * copy the files in `perl_mods/` of the distribution to where you normally have perl modules installed.  
+  * copy the files in `perl_mods/` of the distribution to where you have [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::TreeTagger] installed. These are modified Alvis::TreeTagger modules, needed for English and French lemmatization.
   * copy `search3t` from `new_philologic_parts/` to your `cgi-bin/philologic/` directory.  Note that this replaces the main !PhiloLogic search routine, so you may want to back that up too.
   * copy the entire contents of `www/` in the distribution to a directory `philomine2` in the document root of your Web Server (or elsewhere and configure as required).  Note that this is a subdirectory here as well.
   * Create a run directory that is writeable by the WWW user.  Example: `/tmp/philomine2/`.  In this directory, also writeable by the WWW user, create another folder `featurelists` in which you will create two more folders, `include/` and `exclude/`.   
