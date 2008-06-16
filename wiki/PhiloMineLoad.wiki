@@ -172,14 +172,14 @@ and proceed.
 This reason for all of this is to save file creation (do we want 40,000+ files?).  And it
 is very fast ... particularly when reading in lots of little chunks.  
 
-![TYPE].count.byobject shows the number of items in each object
+TYPE.count.byobject shows the number of items in each object
 {{{
 0:1:1 825
 0:1:2 156
 0:1:3 22
 }}}
 
-![TYPE].totalsinobjects shows raw frequency byobject (before filtering as I recall):
+TYPE.totalsinobjects shows raw frequency byobject (before filtering as I recall):
 
 {{{
 abode_pass 2
@@ -187,7 +187,3 @@ abode_peace 4
 abode_poor 2
 abode_power 2
 }}}
-
-----
-
-Scribbling here....
