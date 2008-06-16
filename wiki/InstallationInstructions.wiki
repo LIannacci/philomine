@@ -85,3 +85,11 @@ We are assuming that your !PhiloLogic system installation is in the standard loc
  = Configuring Your Installation =
 
 Presuming that this all worked, edit `/etc/philologic/philomine.cfg` to suit your local installation.  If you are not using `/etc/philologic/philomine.cfg` you can edit `cgi-bin/philomine2/config.pl` as required.  
+
+ = Getting it to work =
+
+If you have gotten this far, and you have all of the dependencies installed, send us a screen-shot and we'll send you a tee-shirt (be the first on your block).  The next step it to load a !PhiloLogic database.  We recommend a simple, TEI encoded collection of English texts.  You will need to load it with SQL parameters ([ http://philologic.uchicago.edu/developer.php instructions]).  
+
+When the database loads, first we suggest you run it to make sure that modifications to core !PhiloLogic functions were not adversely impacted.  
+
+If that works, you are now ready to load !PhiloMine data.  !PhiloLogic will have installed a directory in your database directory called `philomineload`.  
