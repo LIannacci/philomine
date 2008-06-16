@@ -96,4 +96,7 @@ If that works, you are now ready to load !PhiloMine data.  !PhiloLogic will have
 
 `./philominedocload.pl -english`
 
-in database specific `philomineload`.  Please consult detailed notes on running the two types of !PhiloMine loaders (one for document level data and one for "div level data) in our page 
+in database specific `philomineload`.  Please consult detailed notes on running the two types of !PhiloMine loaders (one for document level data and one for "div level data) in our page PhiloMineLoad
+
+
+
