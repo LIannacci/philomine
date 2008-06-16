@@ -1,6 +1,8 @@
 #summary PhiloMine2: Functions and Parameters
 
-This is taken from PhiloMine1.  Need to be updated.  For KNN classification we need to discuss
+*This is taken from PhiloMine1 and needs to be updated and expanded.*  We will do this in the near future.
+
+For KNN classification we need to discuss
 
 Counts 
 Weighted Counts (inverse rank of nearness)
