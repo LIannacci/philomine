@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Add your content here.
+We will be adding to this as we encounter the inevitable issues.
 
 
 = !PhiloLogic Contextualizations =
