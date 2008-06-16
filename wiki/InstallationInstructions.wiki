@@ -92,4 +92,8 @@ If you have gotten this far, and you have all of the dependencies installed, sen
 
 When the database loads, first we suggest you run it to make sure that modifications to core !PhiloLogic functions were not adversely impacted.  
 
-If that works, you are now ready to load !PhiloMine data.  !PhiloLogic will have installed a directory in your database directory called `philomineload`.  
+If that works, you are now ready to load !PhiloMine data.  !PhiloLogic will have installed a directory in your database directory called `philomineload`.  You should be able to install document level data for !PhiloMine by running 
+
+`./philominedocload.pl -english`
+
+in database specific `philomineload`.  Please consult detailed notes on running the two types of !PhiloMine loaders (one for document level data and one for "div level data) in our page 
