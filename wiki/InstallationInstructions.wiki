@@ -88,7 +88,7 @@ Presuming that this all worked, edit `/etc/philologic/philomine.cfg` to suit you
 
  = Getting it to work =
 
-If you have gotten this far, and you have all of the dependencies installed, send us a screen-shot and we'll send you a tee-shirt (be the first on your block).  The next step it to load a !PhiloLogic database.  We recommend a simple, TEI encoded collection of English texts.  You will need to load it with SQL parameters ([ http://philologic.uchicago.edu/developer.php instructions]).  
+If you have gotten this far, and you have all of the dependencies installed, send us a screen-shot and we'll send you a tee-shirt (be the first on your block).  The next step it to load a !PhiloLogic database.  We recommend a simple, TEI encoded collection of English texts.  You will need to load it with SQL parameters ([http://philologic.uchicago.edu/developer.php instructions]).  
 
 When the database loads, first we suggest you run it to make sure that modifications to core !PhiloLogic functions were not adversely impacted.  
 
@@ -107,8 +107,6 @@ You should get a form that looks rather much like 3rd slide in our
 If you have gotten this far, then you should be able to follow the tour and perform document level tasks.
 
 Please feel free to contact us if/when you run into problems.  We will make every effort to help you out.
-
-
 
 
 
