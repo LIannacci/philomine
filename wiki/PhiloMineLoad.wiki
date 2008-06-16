@@ -110,16 +110,6 @@ and the NGRAM:
 }}}
 So, leave_behind appears in 206 documents, 506 times.  May be useful info.
 
-The following is a note ... which is probably done.  MVO needs to check this in the distribution:
-
-  The script mkcountbydoc.pl generates the files countbydocid.lemmas, countbydocid.bilemmas and countbydocid.bigrams.  These files give the total values for each of these features for each document, and PhiloMine uses them when filtering on total feature value per instance.
-
-  You can run this script by simply executing it:
-
-        perl mkcountbydoc.pl
-
-  after you have run philominedocload.pl. It will soon be integrated into philominedocload.pl.
-
 
 = !PhiloMine Division Data Generation =
 
@@ -127,7 +117,7 @@ To run this `./philominedivload.pl -[english/french] -[number] `
 
 IMPORTANT NOTE: remember to comment out Treetagger in this one.  
 
--[number], should be very small, say 0.01 again as a percentage, since we will be selecting from many thousands of objects.  In 500 works of English poetry, we get 42506 objects.  For 500 modern French, we get 9,161 objects.  So, you want to eliminate NGRAMS from some objects, but not 1% (425).  
+`-[number]`, should be very small, say 0.01 again as a percentage, since we will be selecting from many thousands of objects.  In 500 works of English poetry, we get 42506 objects.  For 500 modern French, we get 9,161 objects.  So, you want to eliminate NGRAMS from some objects, but not 1% (425).  
 
 Also, I have commented out trigrams/lemmas at this time.  These get VERY sparse and
 caused some loading problems (for the English).  I can hack something together if we
@@ -172,14 +162,14 @@ and proceed.
 This reason for all of this is to save file creation (do we want 40,000+ files?).  And it
 is very fast ... particularly when reading in lots of little chunks.  
 
-TYPE.count.byobject shows the number of items in each object
+`[TYPE].count.byobject` shows the number of items in each object
 {{{
 0:1:1 825
 0:1:2 156
 0:1:3 22
 }}}
 
-TYPE.totalsinobjects shows raw frequency byobject (before filtering as I recall):
+`[TYPE.totalsinobjects]` shows raw frequency byobject (before filtering as I recall):
 
 {{{
 abode_pass 2
