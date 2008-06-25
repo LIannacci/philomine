@@ -77,7 +77,7 @@ We are assuming that your !PhiloLogic system installation is in the standard loc
   * copy the files in `perl_mods/` of the distribution to where you have [http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm Alvis::TreeTagger] installed. These are modified Alvis::TreeTagger modules, needed for English and French lemmatization.
   * copy `search3t` from `new_philologic_parts/` to your `cgi-bin/philologic/` directory.  Note that this replaces the main !PhiloLogic search routine, so you may want to back that up too.
   * copy the entire contents of `www/` in the distribution to a directory `philomine2` in the document root of your Web Server (or elsewhere and configure as required).  Note that this is a subdirectory here as well.
-  * Create a run directory that is writeable by the WWW user.  Example: `[SOMETMPPATH]/philomine2/`.  In this directory, also writeable by the WWW user, create another folder `featurelists` in which you will create two more folders, `include/` and `exclude/`.  If you use /tmp/ you may find these are deleted on restart. 
+  * Create a run directory that is writeable by the WWW user.  Example: `/[SOME/PATH]/philomine2/`.  In this directory, also writeable by the WWW user, create another folder `featurelists` in which you will create two more folders, `include/` and `exclude/`.   
   * Note: if you are installing this on a Mac OS-X 10.5 Leopard, you will need to patch `loader.xmake` and `search3t` following the instructions found [http://philologic.uchicago.edu/wiki/index.php/Patches#Patch:_Field-delimited_sort_Semantics_Broken_in_OSX_10.5 here].  Why can't they keep sort arguments backward compatible.  :-(
 
 
@@ -107,5 +107,3 @@ You should get a form that looks rather much like 3rd slide in our
 If you have gotten this far, then you should be able to follow the tour and perform document level tasks.
 
 Please feel free to contact us if/when you run into problems.  We will make every effort to help you out.
-
-
