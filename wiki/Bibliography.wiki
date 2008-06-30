@@ -7,13 +7,14 @@ We keep many of our bibliographic references on
 
 = ARTFL Papers and Talks =
 
-Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Deconstructing Machine Learning: A Challenge for Digital Humanities", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
+Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Deconstructing Machine Learning: A Challenge for Digital Humanities", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008 ([http://docs.google.com/Presentation?id=dfg8j95_58g8f3nvqr gpf]).
 
 Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "!PhiloMine: An Integrated Environment for Humanities Text Mining", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
 
 Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Hidden Roads and Twisted Paths: Intertextual Discovery using Clusters, Classifications, and Similarities", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
 
-Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Feature Creep: Evaluating Feature Sets for Text Mining Literary Corpora", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
+Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Feature Creep: Evaluating Feature Sets for Text Mining Literary Corpora", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008
+([http://docs.google.com/Presentation?id=dfg8j95_48f2ss6rgk gpf]).
 
 Charles Cooney, Russell Horton, Robert Morrissey, Mark Olsen, Glenn Roe, and Robert Voyer, "Re-engineering the tree of knowledge: Vector space analysis and centroid-based clustering in the _Encyclopédie_", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
 
