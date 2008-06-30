@@ -15,7 +15,7 @@ Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Hidden
 
 Charles Cooney, Russell Horton, Mark Olsen, Glenn Roe, and Robert Voyer, "Feature Creep: Evaluating Feature Sets for Text Mining Literary Corpora", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008
 ([http://docs.google.com/Present?id=dfg8j95_48f2ss6rgk&skipauth=true gpf]
-[http://docs.google.com/Presentation?id=dfg8j95_48f2ss6rgk abs]).
+[http://docs.google.com/Doc?docid=dfg8j95_10c9ssr8&hl=en abs]).
 
 Charles Cooney, Russell Horton, Robert Morrissey, Mark Olsen, Glenn Roe, and Robert Voyer, "Re-engineering the tree of knowledge: Vector space analysis and centroid-based clustering in the _Encyclopédie_", Digital Humanities 2008, University of Oulu, Oulu, Finland, June 25-29, 2008.
 
