@@ -1,0 +1,179 @@
+# Introduction #
+
+If you have installed the modified PhiloLogic loader components, the system will create a directory under the database target directory called philomineload.  This directory is where we will generate document and div level data for Philomine2. There are two scripts, `philominedocload.pl` and `philominedivload.pl`.  You should be able to run these directly with no problems.
+```
+./philominedocload.pl -english [-french] -1
+```
+This generates **document** level instance data, sets the language for treetagger and the filter for retaining of bi/tri grams/lemmas as a percentage of documents.  Defaults at 1.
+```
+./philominedivload.pl -english [-french] -.01
+```
+This generates **division** level instanace data, sets the language for treetagger and the filter for retaining of bi/tri grams/lemmas as a percentage of documents.  Note the smaller percentage because you have many more instances.  NOTE!! You must comment out the treetagger option you do NOT want and uncomment the one you want before running this.  For an English load:
+```
+        if ($dblang eq "-english") {
+             use Alvis::TreeTaggerEnglish;
+             $SPLITONAPOSTROPHE = 0;    # Set on off....
+             }
+        elsif ($dblang eq "-french") {
+             # use Alvis::TreeTaggerFrench;
+            $SPLITONAPOSTROPHE = 1;    # Set on off....
+            }
+```
+Yes, this is stupid.  We're looking at a runtime Module load mechanism.  I've tried a bunch of ways, with no love.  Suggestions please.
+
+
+---
+
+
+
+
+# PhiloLogic Modifications #
+
+The distribution contains a modified version `xml-sgmlloader.plin` (our standard TEI XML/SGML text loader) to generate data that are required for div and subdivlevel PhiloMine loading.  It now checks for a new configuration setting in `textload.cfg`:
+```
+# ------------------------- Dump Philomine Chunks -------------------
+# Generate the files for Philomine object chunks.  This will take as 
+# much space as the raw text files.  Writes a chunkified version of the
+# text file to frequencies/wordfreqdoc/  PHILODOCID.rawchunks  This data
+# is read later by philomindivload.pl to generate frequency lists of
+# lemmas, bigrams, and bilemmas.  Normally off.
+$DUMPPHILOMINECHUNKS = 1;
+```
+
+If it sees this, it will dump raw text files as indicated.  These are simply the
+words associated with each !PhiloID object.  Eg:
+
+```
+DIV     200:1:1:5
+    THE EARLY DEAD.    
+SUBDIV  200:1:1:5:1   Why mourn for the Young? Better that the light cloud 
+                      should fade away in the morning's breath, than travel 
+                      through the weary day, to gather in darkness, and end in 
+                      storm.          Bulwer.  
+```
+
+All the words in each SUBDIV should be on one line.  To accumlate DIVS, simple read all the words until the next DIV.  It is our approach to index all DIV breaks (thus for the Encyclopédie we would read a main article to the first subarticle.
+
+We should be able to use this for SUBDIV (paragraph, etc) loading in future.
+
+The reason for this step is to make sure that our object vectors correspond exactly
+to the PhiloLogic object identifiers.  Russ and I decided that synchronizing these
+independently of the load process would be more of a hassle and prone to error (given
+the stunts we do on loading).  In case of errors, it should ALSO be limited to a single
+object, since I grab the philoids when they are generated.
+
+Also note that I modified loader.xmake to copy the contents of `installdir/philomineload` to your database directory.
+
+
+# N-gram/Lemma Generation #
+
+Both loader scripts generate NGRAMS/LEMMAS by reading words in and eliminating the
+words found in the automatically generated `LOADDIR/lib/cluster.filter.wrds`.
+You may want to look at this file, to make sure that you are not eliminating
+any content words, since this just takes (roughly) the top 120.  You can, in
+each, specify a different filter word file if you want.  There may be other
+problems that pop-up, but so far it looks OK.
+
+
+# PhiloMine Document Level Data #
+
+This is currently set to generate lemmas, bigrams,
+bilemmas, trigrams, and trilemmas.
+
+To run this `./philominedocload.pl -[english/french] -[number]`
+
+We can add more languages at one point.  -[number](number.md) is a low end filter for bi/tri-grams/lemmas expressed as the percentage of instances.  Thus -1 is 1% of the documents, so in a load of 500, an NGRAM must appear in more than 4 documents.  This reads the raw input text from `../TEXTS/`. This is a holdover, maybe I should read the texts as generated with object ids, but hey, it works.  :-)
+
+This creates directories in `philomineload lemmas/ bigrams/ bilemmas/ trigrams/` and `trilemmas/`.   In each of these are files `PHILODOCID.rawfreq` which are made up of a string, frequency and docid:
+```
+child_child 1 380
+child_field 1 380
+child_free 1 380
+child_make 2 380
+city_dream 1 380
+city_hate 1 380
+```
+This is the same format as out standard word frequencies, found in `DBDIR/frequencies/`.
+
+Also, in tmp/ you will find files corresponding to raw input to TreeTagger and
+TreeTagger raw out put, by philodocid.  TEMPTEXT.63 is the raw input to TT and
+TREETAGOUT.63 is the output for PhiloDocid 63.  This is a handy way to see what
+works and does not work.  We will also use the raw output to try to build a
+virtual lemmatized word search for PhiloLogic (pending, I may add this to the
+installation).  Finally, you will see `bigrams.sorted`, `bilemmas.sorted`,
+`trigrams.sorted`, `trilemmas.sorted` which are sorted by number of documents, frequency
+and the NGRAM:
+```
+206 506 leave_behind
+194 955 thine_eye
+194 640 hear_voice
+```
+So, leave\_behind appears in 206 documents, 506 times.  May be useful info.
+
+
+# PhiloMine Division Data Generation #
+
+To run this `./philominedivload.pl -[english/french] -[number] `
+
+IMPORTANT NOTE: remember to comment out Treetagger in this one.
+
+`-[number]`, should be very small, say 0.01 again as a percentage, since we will be selecting from many thousands of objects.  In 500 works of English poetry, we get 42506 objects.  For 500 modern French, we get 9,161 objects.  So, you want to eliminate NGRAMS from some objects, but not 1% (425).
+
+Also, I have commented out trigrams/lemmas at this time.  These get VERY sparse and
+caused some loading problems (for the English).  I can hack something together if we
+want to try it.
+
+All of the output goes to alldivobjects/
+
+```
+bigrams.count.byobject          bilemmas.freqbyobject.dat       lemmas.freqbyobject.idx
+bigrams.freqbyobject.dat        bilemmas.freqbyobject.idx       words.count.byobject
+bigrams.freqbyobject.idx        bilemmas.totalinobjects         words.freqbyobject.dat
+bigrams.totalinobjects          lemmas.count.byobject           words.freqbyobject.idx
+bilemmas.count.byobject         lemmas.freqbyobject.dat
+```
+
+Thus, words, lemmas, bigrams, and bilemmas are stored in a pair of files, `[TYPE].freqbyobject.dat` and `[TYPE].freqbyobject.idx`.  The "dat" files contain entries for all of the objects, keyed
+by objectid:
+
+```
+1:1:0   book_any 1|children_book 1|dead_go 1|dear_children 1|mind_make 1|mother_mind 1
+
+OBJID [TAB] STRING INT|STING INT [NEWLINE]
+```
+
+This gives the count of each word, lemma, NGRAM in the object.
+
+The "idx" file is three, space separated, fields showing objectid byte-offset span.
+Thus, the entry for the example above (1:1:0) is
+```
+1:1:0 26776 85
+```
+which shows where to start reading in "dat" file and how far.  So, you read the idx file into a HASH keyed on philo objectid.  Then, each time you need an object, you get the byte offset and span and
+```
+               ($offset, $span) = split("\t", $x);
+                $wobjfile = $SYSTEM_DIR . "[SOMEFILE].dat";
+                open(OBJWORDS, "$wobjfile");
+                seek (OBJWORDS,$offset,0);
+                read (OBJWORDS,$wordsinobject,$span);
+```
+and proceed.
+
+This reason for all of this is to save file creation (do we want 40,000+ files?).  And it
+is very fast ... particularly when reading in lots of little chunks.
+
+`[TYPE].count.byobject` shows the number of items in each object
+```
+0:1:1 825
+0:1:2 156
+0:1:3 22
+```
+
+`[TYPE.totalsinobjects]` shows raw frequency byobject (before filtering as I recall):
+
+```
+abode_pass 2
+abode_peace 4
+abode_poor 2
+abode_power 2
+```

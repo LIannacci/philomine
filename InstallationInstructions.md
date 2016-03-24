@@ -1,0 +1,107 @@
+# Introduction #
+
+We have not automated the PhiloMine installation process at this time.  The following will outline the steps for PhiloMine installation.  Note that we assume you have PhiloLogic and the other packages listed in our DependencyList.  Again, not all of the packages in the list are required, but many are.  We will be updating the distribution on a regular basis, to fix the inevitable bugs and problems, so we advise that you not make significant modifications to the perl code at this time.
+
+
+# PhiloMine2 distribution #
+
+Please take the most recent distribution found on [Download](http://code.google.com/p/philomine/downloads/list) tab and extract the files.  The distribution should contain the following parts, which you will find in half-a-dozen folders in the philomine2/ directory:
+
+```
+
+ls -R
+cgi-bin			lib			perl_mods		www
+etc			new_philologic_parts	philomineload
+
+./cgi-bin:
+cluto_functions.pl		perlbayes_functions.pl		vectorspace_functions.pl
+config.pl			perldecisiontree_functions.pl	weka_functions.pl
+description_functions.pl	perlrelativerate_functions.pl	wekabayes_functions.pl
+feature_filter_functions.pl	philomine.classification.pl	wekaig_functions.pl
+feature_functions.pl		philomine.formtemplate.html	wekaj48_functions.pl
+form.pl				philomine2			wekamlp_functions.pl
+form_components			svmlight_functions.pl		wekasmo_functions.pl
+instance_functions.pl		utility_functions.pl		writedata_functions.pl
+
+./cgi-bin/form_components:
+algorithm_options	form.html		function_data.pl
+corpus			form_functions.pl	get_part.pl
+
+./cgi-bin/form_components/algorithm_options:
+MULTIBAYES.pl
+
+./cgi-bin/form_components/corpus:
+
+./etc:
+philomineenc.cfg
+
+./lib:
+philominesubs.pl
+
+./new_philologic_parts:
+loader.xmake		search3			textload.cfg		xml-sgmlloader.plin
+
+./perl_mods:
+TreetaggerEnglish.pm	TreetaggerFrench.pm
+
+./philomineload:
+README			divaccumhelper.pl	mkcountbydoc.pl		philominedivload.pl
+accumulate.pl		lowfreqfilter.pl	mkcountbyobj.pl		philominedocload.pl
+
+./www:
+philomine.css		philomine_footer.html	philomine_header.html	scripts
+
+./www/scripts:
+jquery.js		philomine_functions.js
+
+
+
+
+```
+
+These files must be copied into the correct locations.  Please note that we that perl is found in /usr/bin/perl  Sadly, if you have your perl someplace else, you may have to modify a number of files.
+
+> # Installing: Step-by-step #
+
+We are assuming that your PhiloLogic system installation is in the standard location, `/var/lib/philologic/`.  If this is not the case, please make the appropriate adjustments in your installation process.
+
+
+  * make a directory in your `cgi-bin/` folder named `philomine2` and copy the entire contents of the distribution `cgi-bin/` directory to this location.  Check permissions and make sure to get all of the subdirectories.
+  * copy the files in `philomineload` in this distribution to a new directory `/var/lib/philologic/installdir/philomineload/`.  Again, check your permissions.
+  * copy `loader.xmake` and `textload.cfg` found in `new_philologic_parts/` to `/var/lib/philologic/` You may want to back the original files up, just in case, as these replace existing files.
+  * copy `xml-sgmlloader.plin` from `new_philologic_parts/` to `/var/lib/philologic/utils` (again, this replaces an existing file).
+  * copy `philominesubs.pl` from the `lib` directory of this distribution to `/var/lib/philologic/installdir/lib/`
+  * copy `philomine.cfg` from `etc/` of the distribution to `/etc/philologic/`
+  * copy the files in `perl_mods/` of the distribution to where you have [Alvis::TreeTagger](http://search.cpan.org/~wbuntine/Alvis-QueryFilter-0.3/lib/Alvis/Treetagger.pm) installed. These are modified Alvis::TreeTagger modules, needed for English and French lemmatization.
+  * copy `search3t` from `new_philologic_parts/` to your `cgi-bin/philologic/` directory.  Note that this replaces the main PhiloLogic search routine, so you may want to back that up too.
+  * copy the entire contents of `www/` in the distribution to a directory `philomine2` in the document root of your Web Server (or elsewhere and configure as required).  Note that this is a subdirectory here as well.
+  * Create a run directory that is writeable by the WWW user.  Example: `/[SOME/PATH]/philomine2/`.  In this directory, also writeable by the WWW user, create another folder `featurelists` in which you will create two more folders, `include/` and `exclude/`.
+  * Note: if you are installing this on a Mac OS-X 10.5 Leopard, you will need to patch `loader.xmake` and `search3t` following the instructions found [here](http://philologic.uchicago.edu/wiki/index.php/Patches#Patch:_Field-delimited_sort_Semantics_Broken_in_OSX_10.5).  Why can't they keep sort arguments backward compatible.  :-(
+
+
+
+> # Configuring Your Installation #
+
+Presuming that this all worked, edit `/etc/philologic/philomine.cfg` to suit your local installation.  If you are not using `/etc/philologic/philomine.cfg` you can edit `cgi-bin/philomine2/config.pl` as required.
+
+> # Getting it to work #
+
+If you have gotten this far, and you have all of the dependencies installed, send us a screen-shot and we'll send you a tee-shirt (be the first on your block).  The next step it to load a PhiloLogic database.  We recommend a simple, TEI encoded collection of English texts.  You will need to load it with SQL parameters ([instructions](http://philologic.uchicago.edu/developer.php)).
+
+When the database loads, first we suggest you run it to make sure that modifications to core PhiloLogic functions were not adversely impacted.
+
+If that works, you are now ready to load PhiloMine data.  PhiloLogic will have installed a directory in your database directory called `philomineload`.  You should be able to install document level data for PhiloMine by running
+
+`./philominedocload.pl -english`
+
+in database specific `philomineload`.  Please consult detailed notes on running the two types of PhiloMine loaders (one for document level data and one for "div level data) in our page PhiloMineLoad.
+
+If you are very lucky, everything worked.  To test this out, you want to access the PhiloMine dynamic search for which will be in
+
+`http://YOUR.MACHINE.NAME/cgi-bin/philomine2/philomine.classification.pl`
+
+You should get a form that looks rather much like 3rd slide in our
+[PhiloMine Tour](http://docs.google.com/Present?id=ddj2s2rb_74hcggqbhm&skipauth=true).
+If you have gotten this far, then you should be able to follow the tour and perform document level tasks.
+
+Please feel free to contact us if/when you run into problems.  We will make every effort to help you out.
